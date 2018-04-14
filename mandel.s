@@ -36,7 +36,7 @@ mandel:
 	mov rbp, rsp	; set new frame pointer
 
 mov r8, rdi	;piksele
-mov r9, rsi     ;skopiowanie max iter    
+mov r9, rsi     ;skopiowanie max iter
 cvtsi2sd xmm10, r9     ;skopiowanie max iter do min
 mov r10, 0
 cvtsi2sd xmm11, r10      ;skopiowanie 0 do wartosci max
@@ -81,7 +81,7 @@ cvtsi2sd xmm13, r10
 
     movsd xmm15, xmm3
 	mov r10, 1
-	cvtsi2sd xmm13, r10 
+	cvtsi2sd xmm13, r10
     addsd xmm15, xmm13
     mulsd xmm15, xmm15
     movsd xmm14, xmm4
@@ -148,7 +148,6 @@ cmp rcx, rdx
 
 
 next2:
-;dotad sprawdzone i jest okej
 
 cvtsi2sd xmm15, r15
 ;comisd xmm15, xmm10
@@ -210,8 +209,8 @@ divsd xmm14, xmm15
 ;teraz w xmm14 siedzi kolor na jaki sie koloruje
 
 
-            
-            
+
+
 
 cvttsd2si r10, xmm14 ;jaki odcien
 
@@ -238,6 +237,6 @@ end:
 
 ;------------------------------------------------------------------------------
 
-	;mov rsp, rbp	; restore original stack pointer // to niepotrzebne bo nie ma zmiennych lokalnych
+	;mov rsp, rbp	; restore original stack pointer
 	pop rbp		; restore "calling procedure" frame pointer
 	ret
